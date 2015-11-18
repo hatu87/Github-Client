@@ -9,12 +9,16 @@
 import UIKit
 import MBProgressHUD
 
-class RepoResultsViewController: UIViewController {
+class RepoResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var searchBar: UISearchBar!
     var searchSettings = GithubRepoSearchSettings()
 
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
 
         // initialize UISearchBar
         searchBar = UISearchBar()
@@ -37,6 +41,16 @@ class RepoResultsViewController: UIViewController {
         }, error: { (error) -> Void in
             print(error)
         })
+    }
+    func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
+    {
+        return 5
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCellWithIdentifier("tableCell") as! RepoTableViewCell
+        return cell
     }
 }
 
