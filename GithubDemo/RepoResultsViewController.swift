@@ -12,7 +12,7 @@ import MBProgressHUD
 class RepoResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var searchBar: UISearchBar!
     var searchSettings = GithubRepoSearchSettings()
-
+    var repos = [GithubRepo]()
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +37,8 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource, UITabl
             for repo in repos {
                 print(repo)
             }
+            self.repos = repos
+            self.tableView.reloadData()
             MBProgressHUD.hideHUDForView(self.view, animated: true)
         }, error: { (error) -> Void in
             print(error)
@@ -44,12 +46,14 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource, UITabl
     }
     func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
     {
-        return 5
+        return self.repos.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("tableCell") as! RepoTableViewCell
+        let repo = self.repos[indexPath.row]
+        cell.repo = repo
         return cell
     }
 }

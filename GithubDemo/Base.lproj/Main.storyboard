@@ -28,8 +28,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="166"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3Y-9L-x6f">
-                                                    <rect key="frame" x="8" y="5" width="43" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3Y-9L-x6f">
+                                                    <rect key="frame" x="8" y="5" width="199" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="5Ge-BV-DZL"/>
                                                     </constraints>
@@ -43,13 +43,13 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="stars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lc-Ht-Udx">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" ambiguous="YES" misplaced="YES" text="stars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lc-Ht-Udx">
                                                     <rect key="frame" x="215" y="5" width="38" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="forks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibA-V6-py6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="forks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibA-V6-py6">
                                                     <rect key="frame" x="273" y="5" width="39" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -82,7 +82,9 @@
                                                 <constraint firstItem="gF1-1i-wz4" firstAttribute="leading" secondItem="T2m-dE-489" secondAttribute="trailing" constant="8" id="EDn-xx-hYB"/>
                                                 <constraint firstItem="gF1-1i-wz4" firstAttribute="top" secondItem="o3Y-9L-x6f" secondAttribute="bottom" constant="5" id="FOh-zd-J5R"/>
                                                 <constraint firstItem="YTr-iR-t5B" firstAttribute="height" secondItem="FfG-iy-3QV" secondAttribute="height" id="LU8-mM-kag"/>
+                                                <constraint firstItem="6lc-Ht-Udx" firstAttribute="leading" secondItem="o3Y-9L-x6f" secondAttribute="trailing" constant="8" id="NQH-UY-04u"/>
                                                 <constraint firstItem="ibA-V6-py6" firstAttribute="leading" secondItem="6lc-Ht-Udx" secondAttribute="trailing" constant="20" id="UGQ-rd-P1h"/>
+                                                <constraint firstItem="ibA-V6-py6" firstAttribute="width" secondItem="6lc-Ht-Udx" secondAttribute="width" id="VDt-Lb-kBv"/>
                                                 <constraint firstItem="FfG-iy-3QV" firstAttribute="top" secondItem="T2m-dE-489" secondAttribute="bottom" constant="5" id="eYg-r9-8lO"/>
                                                 <constraint firstItem="YTr-iR-t5B" firstAttribute="leading" secondItem="FfG-iy-3QV" secondAttribute="trailing" constant="8" id="hrd-Ib-EiI"/>
                                                 <constraint firstItem="YTr-iR-t5B" firstAttribute="top" secondItem="gF1-1i-wz4" secondAttribute="bottom" constant="5" id="iTW-bg-CAa"/>
@@ -96,11 +98,11 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="desrLabel" destination="YTr-iR-t5B" id="x3S-H2-hwU"/>
-                                            <outlet property="forksLabel" destination="dSP-yk-oc5" id="rti-Yw-S82"/>
+                                            <outlet property="forkLabel" destination="ibA-V6-py6" id="KKs-dL-ClL"/>
                                             <outlet property="imgView" destination="FfG-iy-3QV" id="uYU-re-RNQ"/>
-                                            <outlet property="nameLabel" destination="dSP-yk-oc5" id="e9e-PJ-feE"/>
-                                            <outlet property="ownerLabel" destination="dSP-yk-oc5" id="Jrx-8g-cCm"/>
-                                            <outlet property="starsLabel" destination="dSP-yk-oc5" id="idb-e1-CAj"/>
+                                            <outlet property="nameLabel" destination="o3Y-9L-x6f" id="0Tb-AH-qop"/>
+                                            <outlet property="owner" destination="gF1-1i-wz4" id="lvi-Rz-685"/>
+                                            <outlet property="starLabel" destination="6lc-Ht-Udx" id="GcQ-pB-IpM"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
